@@ -1,0 +1,28 @@
+<head>
+    <title>MeteorChat</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Welcome to MeteorChat!</h1>
+            <p class="lead center">This is a simple chat application written in the Meteor framework.</p>
+        </div>
+        <div class="row-fluid aligncenter">
+            <div class="span-10">{{> Chat}}</div>
+        </div>
+
+        <div id="footer" >
+            <p>Powered by <a href="http://meteor.com">Meteor</a>
+               and made by <a href="mailto:steinotto.svorstol@gmail.com">Stein-Otto Svorstøl</a></p>
+        </div>
+    </div>
+</body>
+
+<template name="Chat">
+    {{#each Messages}}
+        <b>{{username}}:</b>   {{text}}<br>
+    {{/each}}
+    <br>
+    <input cols="80" type="text" id="message" value=""> <button>Send</button>
+</template>
