@@ -1,19 +1,15 @@
 if (Meteor.isClient) {
-    Session.set("message", "");
     var Messages = new Meteor.Collection("Messages");
 
     Template.Chat.helpers({
-        Messages: function(){
+        Messages: function() {
             return Messages.find()
-        },
-        message: function () {
-            return Session.get("message");
         }
     });
 
     Template.Chat.events({
         'click button': function (event, template) {
-            Messages.insert({username: "Esso", text: template.find("#message").value } );
+            Messages.insert({username: template.find("#username").value, text: template.find("#message").value } );
 
         }
     });

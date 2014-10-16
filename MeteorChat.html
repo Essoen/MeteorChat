@@ -20,6 +20,7 @@
 </body>
 
 <template name="Chat">
+    Your username: <input type="text" id="username" value=""> <br>
     {{#each Messages}}
         <b>{{username}}:</b>   {{text}}<br>
     {{/each}}
