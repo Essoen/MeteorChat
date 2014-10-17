@@ -21,9 +21,12 @@
 
 <template name="Chat">
     Your username: <input type="text" id="username" value=""> <br>
+    <table s>
     {{#each Messages}}
-        <b>{{username}}:</b>   {{text}}<br>
+        <tr>
+            <td><b>{{username}}:</b></td> <td>{{text}}</td>
+        </tr>
     {{/each}}
-    <br>
+    </table><br>
     <input cols="80" type="text" id="message" value=""> <button>Send</button>
 </template>
