@@ -11,7 +11,9 @@ if (Meteor.isClient) {
     });
 
     Template.Chat.events({
-        'click button': function (event, template) {
+        'click button, keypress.message': function (event, template) {
+            if(event.type === 'keypress'  && event.which !== 13)
+                return;
             Messages.insert({
                 timestamp: new Date(),
                 username: template.find("#username").value,
@@ -25,10 +27,11 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
     Meteor.startup(function () {
-        Messages.allow({
-            'insert': function(messageObject){
-                return true;
-            }
-        })
+        // Nothing in particular
     });
+    Messages.allow({
+        'insert': function(messageObject){
+            return true;
+        }
+    })
 }
