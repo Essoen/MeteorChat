@@ -6,7 +6,7 @@ if (Meteor.isClient) {
             return Messages.find({}, {
                 sort: {timestamp: 1},
                 limit: 10
-            });
+            }).fetch().reverse();
         }
     });
 
