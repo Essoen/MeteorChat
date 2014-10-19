@@ -4,7 +4,7 @@ if (Meteor.isClient) {
     Template.Chat.helpers({
         Messages: function() {
             return Messages.find({}, {
-                sort: {timestamp: 1},
+                sort: {timestamp: -1},
                 limit: 10
             }).fetch().reverse();
         }
