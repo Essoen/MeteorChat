@@ -8,6 +8,6 @@ A simple chat application written in the Meteor framework, to be used as an exam
 2. Get all the files and start the server:
 ```bash
 $ git clone git@github.com:Essoen/MeteorChat.git
-$ cd simple-blog
+$ cd MeteorChat
 $ meteor
 ```
